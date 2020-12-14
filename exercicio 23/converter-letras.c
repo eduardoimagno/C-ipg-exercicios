@@ -4,27 +4,22 @@
 vice-versa.*/
 
 int main(){
-    char letra[99];
+    char frase[99];
 
-    for ( int i=0; i <= 99; i++)
-    {
-        printf(" escreva uma letra:  ");
-        scanf("%s",&letra);
-        if ((letra >= 'a')&&(letra<='z'))
+        printf("Digite uma frase: ");
+        gets(frase);
+
+        for ( int i=0; frase[i];i++)
         {
-            letra-=32;
+            if ((frase[i] >= 'a')&&(frase[i]<='z'))
+            {
+                frase[i]-=32;
+            }else if ((frase[i] >= 'A')&&(frase[i]<='Z'))
+            {
+                frase[i]+=32;
+            }
         }
-        if ((letra >= 'A')&&(letra<='Z'))
-        {
-            letra+=32;
-        }
-    }
+    printf("%s",frase);
     
-
-    printf("%s",letra);
-    
-    
-
-
     return 0;
 }
